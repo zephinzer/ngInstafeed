@@ -1,0 +1,41 @@
+<html data-ng-app="ngInstafeedDemo">
+	<head>
+		<script src="../bower_components/instafeed.js/instafeed.min.js"></script>
+		<script src="../bower_components/angular/angular.min.js"></script>
+		<script src="../src/ng-instafeed.js"></script>
+		<script src="index.js"></script>
+		<link rel="stylesheet" href="bootstrap.min.css" />
+		<title>
+			ngInstafeed Demo
+		</title>
+	</head>
+	<body data-ng-controller="primaryCtrl">
+		<div class="container-fluid text-center">
+			<div class="col-xs-8">
+				<input class="form-control" type="text" placeholder="Hashtag" ng-model="data.tagName">
+			</div>
+			<div class="col-xs-4">
+				<button class="btn btn-primary form-control"
+					ng-click="load.tagged()">
+					Retrieve
+				</button>
+			</div>
+		</div>
+		<div class="col-xs-12 text-center" ng-if="!ngInstafeedModel.data || ngInstafeedModel.data.length == 0">
+			<br />
+			<i>Enter in a hashtag above and hit Retrieve to load data from hashtag</i>
+			<br /><br />
+		</div>
+		<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" ng-repeat="item in ngInstafeedModel.data">
+			<img ng-src="{{item.images.standard_resolution.url}}" 
+				style="max-width:100%;" />
+		</div>
+		<div class="col-xs-12">
+				<button class="btn btn-primary form-control"
+					ng-click="load.more()"
+					ng-disabled="!ngInstafeedState.hasNext || ngInstafeedState.loading">
+					Load More
+				</button>
+		</div>
+	</body>
+</html>

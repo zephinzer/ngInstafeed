@@ -1,0 +1,32 @@
+{
+  "name": "ngInstafeed",
+  "version": "1.0.0",
+  "authors": [
+    "Joseph Matthias Goh <joseph@zephinzer.com>"
+  ],
+  "description": "Angular wrapper for Instafeed.",
+  "main": "",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "instafeed",
+    "angular",
+    "ng",
+    "instagram",
+    "feed"
+  ],
+  "license": "MIT",
+  "homepage": "http://joeir.net",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "instafeed.js": "~1.4.1",
+    "angular": "~1.4.7"
+  }
+}
